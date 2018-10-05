@@ -17,7 +17,6 @@ let appData = {
     },
     optionalExpenses: {},
     income: [],
-    additionalIncome: "",
     savings: false
 };
 
