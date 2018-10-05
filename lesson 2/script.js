@@ -15,12 +15,12 @@ let appData = {
 let i = 0;
 // цикл - while 
 
-while (i < 2) {
-        let mandatoryExpense = prompt("Введите обязательную статью расходов в этом месяце",""),
-        howMuchExpense = +prompt("Во сколько обойдется?", "");
-        console.log("yes 1");
-        i++;
-};
+// while (i < 2) {
+//         let mandatoryExpense = prompt("Введите обязательную статью расходов в этом месяце",""),
+//         howMuchExpense = +prompt("Во сколько обойдется?", "");
+//         console.log("yes 1");
+//         i++;
+// };
 
 // цикл - do while 
 
@@ -33,19 +33,19 @@ while (i < 2) {
               
 // цикл - for
 
-// for (let i = 0; i < 2; i++){
-//     let mandatoryExpense = prompt("Введите обязательную статью расходов в этом месяце",""),
-//         howMuchExpense = +prompt("Во сколько обойдется?", "");
+for (let i = 0; i < 2; i++){
+    let mandatoryExpense = prompt("Введите обязательную статью расходов в этом месяце",""),
+        howMuchExpense = +prompt("Во сколько обойдется?", "");
 
-//     if ((typeof(mandatoryExpense))=== 'string' && (typeof(mandatoryExpense)) != null && (typeof(howMuchExpense)) != null && mandatoryExpense != '' && 
-//     mandatoryExpense != '' && mandatoryExpense.length < 50) {
-//         appData.expenses[mandatoryExpense] = howMuchExpense;
-//     } else if (i--) { 
-//         alert("Вы не ввели данные про статью расходов в месяц"),
-//         appData.expenses[mandatoryExpense] = howMuchExpense;
-//     };
+    if ((typeof(mandatoryExpense))=== 'string' && (typeof(mandatoryExpense)) != null && (typeof(howMuchExpense)) != null && mandatoryExpense != '' && 
+    mandatoryExpense != '' && mandatoryExpense.length < 50) {
+        appData.expenses[mandatoryExpense] = howMuchExpense;
+    } else if (i--) { 
+        alert("Вы не ввели данные про статью расходов в месяц"),
+        appData.expenses[mandatoryExpense] = howMuchExpense;
+    };
     
-// };
+};
 
 
 
