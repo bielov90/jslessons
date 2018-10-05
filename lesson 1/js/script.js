@@ -12,8 +12,8 @@ let appData = {
     budget: money,
     timeData: time,
     expenses: {
-        mandatoryExpense: howMuchExpense,
-        mandatoryExpenseTwo: howMuchExpenseTwo,
+        [mandatoryExpense]: howMuchExpense,
+        [mandatoryExpenseTwo]: howMuchExpenseTwo,
     },
     optionalExpenses: {},
     income: [],
