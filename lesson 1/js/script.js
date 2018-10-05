@@ -4,9 +4,10 @@ let money = +prompt("Ваш бюджет на месяц?", ""),
     time = prompt("Введите дату в формате YYYY-MM-DD", "");
 
 let mandatoryExpense = prompt("Введите обязательную статью расходов в этом месяце",""),
-    howMuchExpense = prompt("Во сколько обойдется?", ""),
+    howMuchExpense = +prompt("Во сколько обойдется?", ""),
     mandatoryExpenseTwo = prompt("Введите обязательную статью расходов в этом месяце",""),
-    howMuchExpenseTwo = prompt("Во сколько обойдется?", "");
+    howMuchExpenseTwo = +prompt("Во сколько обойдется?", "");
+
 let appData = {
     budget: money,
     timeData: time,
@@ -15,11 +16,12 @@ let appData = {
         mandatoryExpenseTwo: howMuchExpenseTwo,
     },
     optionalExpenses: {},
-    additionalIncome: [],
+    income: [],
     additionalIncome: "",
     savings: false
 };
 
 // выводим бюджет на день, без учёта расходов
+console.log(appData)
 alert(money / 30);
 
