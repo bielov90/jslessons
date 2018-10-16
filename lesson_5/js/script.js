@@ -12,7 +12,7 @@ let menu = document.querySelector('.menu'),
     menu.appendChild(menuItemFi);
     menuItemFi.textContent = "Пятый пункт";
     title.textContent = "Мы продаем только подлинную технику Apple";
-    document.body.style.backgroundImage = "url(../lesson_5/img/apple_true.jpg)";
+    document.body.style.background = "url(../lesson_5/img/apple_true.jpg)";
     adv.remove();
     appA.textContent = "Моё отношение к технике Apple: " + prompt('Ваше отношение к технике apple?');
     
