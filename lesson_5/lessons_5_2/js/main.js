@@ -91,8 +91,12 @@ let startСalculating = document.getElementById('start'),
     countBudgetBtn.addEventListener('click', function(){
 
         if (appData.budget != undefined){
-            appData.moneyPerDay = ((appData.budget  - appData.sum) / 30).toFixed();
+            appData.moneyPerDay = ((appData.budget / 30 ) - (appData.sum / 30 )).toFixed();
             dayBudgetValue.textContent = appData.moneyPerDay;
+            if (dayBudgetValue.textContent == "NaN"){
+                dayBudgetValue.textContent = "Введите обязательные траты"
+            }
+
 
             if (appData.moneyPerDay < 100) {
                 levelValue.textContent = "Минимальный уровень доставтка";
