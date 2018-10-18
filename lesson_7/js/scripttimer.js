@@ -17,5 +17,5 @@ window.addEventListener('DOMContentLoaded', function(){
         }
         document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds;
       }
-      setTimeout(timeStart, 1000);
+      setInterval(timeStart, 1000);
 });
