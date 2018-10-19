@@ -94,16 +94,18 @@ window.addEventListener('DOMContentLoaded', function(){
     //Modal 
    
     let more = document.querySelector('.more'),
-        descriptionBtn = document.querySelector('.description-btn'),
+        descriptionBtn = document.querySelectorAll('.description-btn'),
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close');
-       
+       console.log(descriptionBtn)
 
         more.classList.add("mor");
-        descriptionBtn.classList.add("mor");
+        for (let i = 0; i < descriptionBtn.length; i++){
+        descriptionBtn[i].classList.add("mor");
+        };
         let mor = document.getElementsByClassName('mor');
 
-       for (let i = 0; i < 2; i++){
+       for (let i = 0; i < mor.length; i++){
 
         mor[i].addEventListener('click', function(){
             overlay.style.display = 'block';
