@@ -1,4 +1,4 @@
-//window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', function(){
 
     'use strict';
 
@@ -38,7 +38,7 @@
 
     //таймер 
 
-    let deadline = '2018-10-25';
+    let deadline = '2018-10-28';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -134,8 +134,10 @@
             
             statusMassage.classList.add('status');
            
+           
 
     form.addEventListener('submit', function(event) {
+          
         event.preventDefault();
         form.appendChild(statusMassage);
 
@@ -170,9 +172,13 @@
            
         }
 
+
         // Fotm 2
 
-});
+  });
+
+
+
         let formC = document.getElementById('form'),
             inputC = formC.getElementsByTagName('input'),
             namberPhone = formC.getElementsByTagName('input')[1];
@@ -216,4 +222,9 @@
     });
   
     
-//});
+});
+function check(){   
+    if (event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57)  { 
+        event.preventDefault();
+    }
+  }
