@@ -1,16 +1,6 @@
 $(document).ready(function() {
 
-    $('.main_btna').on('click', function() {
-        $('.overlay').fadeToggle('900');
-        $(".modal").slideDown(500);
-    });
-    $('.main_btn').on('click', function() {
-        $('.overlay').fadeToggle('900');
-        $(".modal").slideDown(500);
-        
-    });
-
-    $('a[href="#sheldure"]').on('click', function() {
+    $('.main_btna, a[href="#sheldure"], .main_btn').on('click', function() {
         $('.overlay').fadeToggle('900');
         $(".modal").slideDown(500);
     });
