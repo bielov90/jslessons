@@ -166,8 +166,11 @@ window.addEventListener('DOMContentLoaded', function(){
                                 formData.forEach(function(value, key) {
                                     obj[key] = value;
                                 });
+                                obj.data
+                                
                                 let json = JSON.stringify(obj);
-                            request.send(data);
+
+                            request.send(json);
                         });
                     }
                     

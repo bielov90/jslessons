@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/script.js',
+  entry: './src/js/index.js',
   output: {
     filename: 'bundle.js',
     path: __dirname + '/dist/js'
@@ -24,7 +24,7 @@ module.exports = {
           loader: 'babel-loader?optional[]=runtime',
           options: {
             presets: [
-              ["@babel/env", {
+              ["@babel/preset-env", {
                 targets: {
                   edge: "17",
                   firefox: "60",
