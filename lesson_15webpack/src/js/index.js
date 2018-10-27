@@ -13,6 +13,6 @@ window.addEventListener('DOMcontentLoaded', function() {
         slider();
         tabs();
         timer();
-        modald();
+        modals();
 
 });

@@ -54,13 +54,12 @@ function calc() {
     });
 
     
-});
+};
 function checks(){   
     if ( event.keyCode < 48 || event.keyCode > 57)  { 
         event.preventDefault();
     }
   };
    
-}
 
 module.exports = calc;
