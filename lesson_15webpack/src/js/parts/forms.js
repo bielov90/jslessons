@@ -1,6 +1,9 @@
 function forms() {
 
-    let message = {
+   
+       // Form 1
+
+       let message = {
         loading: "Загрузка....",
         success: "Спасибо, скоро мы свами свяжемся",
         failure: "Что-то пошло не так...."
@@ -11,11 +14,16 @@ function forms() {
          statusMassage = document.createElement('div');
          
          statusMassage.classList.add('status');
-        
+         for(let i = 0; i < input.length; i++) {
+             input[i].addEventListener('input', () => {
+                 input[i].value = input[i].value.replace(/[^\+\d]/g, '');
+             });
+         }
+    
         
 
  form.addEventListener('submit', function(event) {
-       
+
      event.preventDefault();
      form.appendChild(statusMassage);
 
@@ -58,11 +66,11 @@ function forms() {
 
 
      let formC = document.getElementById('form'),
-         inputC = formC.getElementsByTagName('input'),
-         namberPhone = formC.getElementsByTagName('input')[1];
+         inputC = formC.getElementsByTagName('input');
+         //namberPhone = formC.getElementsByTagName('input')[1];
+   
+    
          
-        
-
  formC.addEventListener('submit', function(event) {
      event.preventDefault();
      formC.appendChild(statusMassage);
@@ -107,4 +115,4 @@ function forms() {
    
 }
 
-module.exports = forms;
+export default  forms;

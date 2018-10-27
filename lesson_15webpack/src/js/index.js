@@ -1,12 +1,17 @@
-window.addEventListener('DOMcontentLoaded', function() {
+import calc from './parts/calc.js';
+import forms from './parts/forms.js';
+import slider from './parts/slider.js';
+import tabs from './parts/tabs.js';
+import timer from './parts/timer.js';
+import modals from './parts/modals.js';
+
+
+
+
+
+window.addEventListener('DOMcontentLoaded', () => {
 
     "use strict"
-    let calc = require('./parst/calc.js'),
-        forms = require('./parst/forms.js'),
-        slider = require('./parst/slider.js'),
-        tabs = require('./parst/tabs.js'),
-        timer = require('./parst/timer.js'),
-        modals = require('./parst/modals.js');
 
         calc();
         forms();

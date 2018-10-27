@@ -44,4 +44,4 @@ dorsWrap.addEventListener('click', function(event) {
    
 }
 
-module.exports = slider;
+export default slider;
