@@ -133,11 +133,16 @@ window.addEventListener('DOMContentLoaded', function(){
             statusMassage = document.createElement('div');
             
             statusMassage.classList.add('status');
-           
+            for(let i = 0; i < input.length; i++) {
+                input[i].addEventListener('input', () => {
+                    input[i].value = input[i].value.replace(/[^\+\d]/g, '');
+                });
+            }
+       
            
 
     form.addEventListener('submit', function(event) {
-          
+
         event.preventDefault();
         form.appendChild(statusMassage);
 
@@ -180,11 +185,11 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
         let formC = document.getElementById('form'),
-            inputC = formC.getElementsByTagName('input'),
-            namberPhone = formC.getElementsByTagName('input')[1];
+            inputC = formC.getElementsByTagName('input');
+            //namberPhone = formC.getElementsByTagName('input')[1];
+      
+       
             
-           
-
     formC.addEventListener('submit', function(event) {
         event.preventDefault();
         formC.appendChild(statusMassage);
@@ -277,9 +282,13 @@ window.addEventListener('DOMContentLoaded', function(){
 
         totalValue.innerHTML = 0;
         
-        
-        persons.addEventListener('change', function() {
+        function verifyInputNumbers(elem) {
+            elem.value = elem.value.replace(/[^\d]/g);
+          };
+        persons.addEventListener('input', function() {
+            verifyInputNumbers(persons);
             personsSum = +this.value;
+            
             total = (daysSum + personsSum)*4000;
 
             if(restDays.value == '' || restDays.value == 0) {
@@ -294,7 +303,8 @@ window.addEventListener('DOMContentLoaded', function(){
             }
 
         });
-        restDays.addEventListener('change', function() {
+        restDays.addEventListener('input', function() {
+            verifyInputNumbers(restDays);
             daysSum = +this.value;
             total = (daysSum + personsSum)*4000;
 
@@ -323,15 +333,10 @@ window.addEventListener('DOMContentLoaded', function(){
 
         
 });
+
 function check(){   
     if (event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57)  { 
         event.preventDefault();
     }
-  };
-  function checks(){   
-    if ( event.keyCode < 48 || event.keyCode > 57)  { 
-        event.preventDefault();
-    }
-  };
-
+  }; 
  
