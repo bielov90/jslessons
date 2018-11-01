@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Задание 17</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href='tabulous.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+		<div id="wrapper">
+
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1" title="">Tab 1</a></li>
+					<li><a href="#tabs-2" title="">Tab 2</a></li>
+					<li><a href="#tabs-3" title="">Tab 3</a></li>
+				</ul>
+	
+			<div id="tabs_container">
+				
+	
+	
+	
+				<div id="tabs-1">
+					<div id="tabs-1">
+						<div class="galleria">
+							<img src="photo1.jpg">
+							<img src="photo2.jpg">
+							<img src="photo3.jpg">
+						</div>
+					</div>
+				</div>
+	
+			<div id="tabs-2">
+					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.</p>
+		
+			</div>
+	
+			<div id="tabs-3">
+					<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.</p><p> Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
+			</div>
+	
+			</div><!--End tabs container-->
+			
+		</div><!--End tabs-->
+	
+	
+	
+	
+		
+	
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="galleria/galleria-1.5.7.min.js"></script>
+<script>(
+	function($) {
+	$(function() {
+	
+	  $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+		$(this)
+		  .addClass('active').siblings().removeClass('active')
+		  .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+	  });
+	
+	});
+	})(jQuery);
+	(function() { 
+            Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+			Galleria.configure({
+				transition: 'flash',
+				imageCrop: true,
+				height: 300,
+				width: 700,
+				lightbox: true,
+				autoplay: 4000 
+			});
+		Galleria.run('.galleria');
+        }());
+	</script>
+	<script>
+			$(document).ready(function ($) {
+
+			$('#tabs').tabulous();  
+
+			});
+			$('#tabs').tabulous({
+      effect: 'scale'
+    });	
+	</script>
+		
+	<script src="tabulous.js"></script>
+	<script src="js.js"></script>
+</body>
+</html>
