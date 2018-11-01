@@ -27,11 +27,10 @@ window.addEventListener('DOMContentLoaded', function(){
             phoneLink[i].addEventListener('click', function(){
                 popup.style.display = 'block';
             });
-         
-            close.addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
         }
+        close.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
         popup.addEventListener('click', function(event) {
             if (event.target === popup)
             popup.style.display = 'none';
@@ -41,14 +40,14 @@ window.addEventListener('DOMContentLoaded', function(){
           }, 60000);
 
     // Timer
-    let deadline = '2018-11-03';
+    let deadline = '2018-11-02';
 
-    function getTimeRemaining(endtime) {
-        let t = Date.parse(endtime) - Date.parse(new Date()),
+    function getTimezoneOffse(endtime) {
+        let t = new Date(),
             seconds = Math.floor((t/1000) % 60),
             minutes = Math.floor((t/1000/60) % 60),
-            hours = Math.floor((t/(1000/6060) % 24)),
-            days = Math.floor((t/(100060/60/24)));
+            hours = Math.floor((t/(1000*60*60) % 24)),
+            days = Math.floor((t/(1000*60*60*60)%24));
 
             if (seconds < 10) {
                 seconds = "0" + seconds;
@@ -62,6 +61,7 @@ window.addEventListener('DOMContentLoaded', function(){
             if (days < 10) {
                 days = "0" + days;
             } 
+            
             if (t <= 0) {
                 days = "00";
                 hours = "00";
@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function(){
             timeInterval = setInterval(updateClock, 1000);
 
         function updateClock(){
-            let t = getTimeRemaining(endTime);
+            let t = getTimezoneOffse(endTime);
             days.textContent = t.days;
             hours.textContent = t.hours;
             minutes.textContent = t.minutes;
