@@ -23,10 +23,18 @@ window.addEventListener('DOMContentLoaded', function(){
             phoneLink[i].addEventListener('click', function(){
                 popup.style.display = 'block';
                 this.classList.add('popup_engineer');
+                
             });
+            setTimeout(function() {
+                popup.style.display = 'block';
+              }, 60000);
             close.addEventListener('click', function() {
                 popup.style.display = 'none';
                 phoneLink[i].classList.remove('popup_engineer');
             });
+            
         }
+
+    // Tabs window
+   
 });
