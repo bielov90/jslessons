@@ -31,12 +31,11 @@ window.addEventListener('DOMContentLoaded', function(){
             close.addEventListener('click', function() {
                 popup.style.display = 'none';
             });
-            popup.addEventListener('click', function(event) {
-                if (event.target === popup)
-                popup.style.display = 'none';
-            });
-            
         }
+        popup.addEventListener('click', function(event) {
+            if (event.target === popup)
+            popup.style.display = 'none';
+        });
         setTimeout(function() {
             popup.style.display = 'block';
           }, 60000);
@@ -48,8 +47,8 @@ window.addEventListener('DOMContentLoaded', function(){
         let t = Date.parse(endtime) - Date.parse(new Date()),
             seconds = Math.floor((t/1000) % 60),
             minutes = Math.floor((t/1000/60) % 60),
-            hours = Math.floor((t/(1000*60*60) % 24)),
-            days = Math.floor((t/(1000*60*60*24)));
+            hours = Math.floor((t/(1000/6060) % 24)),
+            days = Math.floor((t/(100060/60/24)));
 
             if (seconds < 10) {
                 seconds = "0" + seconds;
