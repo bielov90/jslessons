@@ -895,7 +895,7 @@ textarea:focus {
   position: relative;
 }
 .timer-numbers {
-  margin-top: 0;
+  margin-top: -10px;
   font-size: 35px;
   color: #f90707;
 }
@@ -910,7 +910,13 @@ display: inline-block;
   margin-top: 40px;
 }
 
-
+.timer-design {
+  font-size: 10px;
+  /* padding: 0 17px 0 20px; */
+  word-spacing: 30px;
+  margin-top: -5px;
+  text-align: center;
+}
 /*Media*/
 @media (max-width: 1400px) {
   .main {
