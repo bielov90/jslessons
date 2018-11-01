@@ -881,8 +881,27 @@ textarea:focus {
 }
 .timer {
   background-color: #ffffff;
+  padding: -60px;
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
   padding: 10 10 10 10;
   text-align: center;
+}
+.eTimer {
+  margin: -30px;
+  padding: 0;
+  position: relative;
+}
+.timer-numbers {
+  margin-top: 0;
+  font-size: 35px;
+  color: #f90707;
+}
+
+.timer-numbers p{
+display: inline-block;
 }
 
 .timer-action {
