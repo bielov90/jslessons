@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', function(){
           }, 60000);
 
     // Timer
-    let deadLine = '2018-11-02';
+    let deadLine = '2018-11-03';
 
 function getTimeRemaining(endtime) {
   let date = new Date();
@@ -102,67 +102,37 @@ function setClock(id, endTime) {
 
 }
 setClock('timer', deadLine);
-    // let deadline = '2018-11-03';
-  
-    // function getTimeRemaining(endtime) {
-    //     let date = new Date();
-    //     let date2 = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()));
-    //     let t = Date.parse(endtime) - Date.parse(date2),
+    // tabs
 
-    //         seconds = Math.floor((t/1000) % 60),
-    //         minutes = Math.floor((t/1000/60) % 60),
-    //         hours = Math.floor((t/1000/60/60)%24),
-    //         days = Math.floor((t/(1000*60*60*24)));
-
-    //         if (seconds < 10) {
-    //             seconds = "0" + seconds;
-    //         }
-    //         if (minutes < 10) {
-    //             minutes = "0" + minutes;
-    //         }
-    //         if (hours < 10) {
-    //             hours = "0" + hours;
-    //         } 
-    //         if (days < 10) {
-    //             days = "0" + days;
-    //         } 
-    //         if (t <= 0) {
-    //             days = "00";
-    //             hours = "00";
-    //             minutes = "00";
-    //             seconds = "00";
-    //         }
-    //         return {
-    //             'total' : t,
-    //             'days' : days,
-    //             'hours' : hours,
-    //             'minutes' : minutes,
-    //             'seconds' : seconds
-    //         };
+    let tab = document.querySelectorAll('.glazing_block'),
+        info = document.querySelector('.glazing_slider'),
+        tabContent = document.getElementsByClassName('tab-contenet');
         
-    // }
-   
-    // function setClock (id, endTime){
-    //     let timer = document.getElementById(id),
-    //         days = timer.querySelector('.days'),
-    //         hours = timer.querySelector('.hours'),
-    //         minutes = timer.querySelector('.minutes'),
-    //         seconds = timer.querySelector('.seconds'),
-    //         timeInterval = setInterval(updateClock, 1000);
+        function hideTabsContent(a) {
+            for (let i = a; i < tabContent.length; i++) {
+                tabContent[i].classList.remove('show');
+                tabContent[i].classList.add('hide');
+            }
+        }
+        hideTabsContent(1)
 
-    //     function updateClock(){
-    //         let t = getTimeRemaining(endTime);
-    //         days.textContent = t.days;
-    //         hours.textContent = t.hours;
-    //         minutes.textContent = t.minutes;
-    //         seconds.textContent = t.seconds;
+        function showTabsContent(b) {
+            if (tabContent[b].classList.contains('hide')) {
+                tabContent[b].classList.remove('hide');
+                tabContent[b].classList.add('show');
+            }
+        }
 
-    //         if (t.total <= 0) {
-    //             clearInterval(timeInterval);
-    //         }
-            
-    //     }
-        
-    // }
-    // setClock('timer', deadline);
+        info.addEventListener('click', function(event) {
+            let target = event.target;
+            if(target && target.classList.contains('glazing_block')) {
+                for (let i = 0; i < tab.length; i++) {
+                    if (target == tab[i]) {
+                        hideTabsContent(0);
+                        showTabsContent(i);
+                        break;
+                    }
+                }
+            }
+        });
 });

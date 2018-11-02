@@ -415,6 +415,12 @@ textarea:focus {
   text-decoration: none;
   color: #454545;
 }
+.container .tab-contenet .show {
+  display: flex;
+}
+.container .tab-contenet .hide {
+  display: none;
+}
 /*test*/
 /*.tabs li {
 	display: inline-block;
