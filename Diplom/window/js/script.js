@@ -149,5 +149,80 @@ setClock('timer', deadLine);
             }
         });
 
-         
+          // tabs - finish
+
+        let clickLink = document.querySelectorAll('.click_link'),
+            decorSlider = document.querySelector('.decoration_slider'),
+            tabsContent = document.querySelectorAll('.tabs-contenet'),
+            noСlick = document.getElementsByClassName('no_click');
+
+
+      function hideContent(a) {
+          for (let i = a; i < tabsContent.length; i++) {
+                tabsContent[i].classList.remove('show');
+                tabsContent[i].classList.add('hide');
+                noСlick[i].classList.remove('after_click');
+          }
+      }
+  
+      hideContent(1);
+  
+      function showContent(b) {
+          if (tabsContent[b].classList.contains('hide')) {
+            tabsContent[b].classList.remove('hide');
+            tabsContent[b].classList.add('show');
+            noСlick[b].classList.add('after_click');
+          }
+      }
+  
+      decorSlider.addEventListener('click', function(event){
+          let target = event.target;
+          if(target && target.classList.contains('click_link')) {
+              for(let i = 0; i < clickLink.length; i++) {
+                  if(target == clickLink[i]) {
+                      hideContent(0);
+                      showContent(i);
+                      break;
+                  }
+              }
+          }
+      });
+
+      //Form
+
+      let massege = {
+          loading: "Отправка.....",
+          success: "Отправлено!",
+          failure: "Ошибка"
+      }
+    let form = document.querySelectorAll('.form'),
+        statusMassege = document.createElement('div');
+        
+        statusMassege.classList.add('status');
+      for (let i = 0; i < form.length; i++) {
+          let input = form[i].getElementsByTagName('input');
+            form[i].addEventListener('submit', function(event) {
+                event.preventDefault();
+                form[i].appendChild(statusMassege);
+
+                let request = new XMLHttpRequest();
+                    request.open('GET', 'server.php');
+                    request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+
+                    let formData = new FormData(form); 
+                    request.send(formData);
+                    request.addEventListener('readystatechange', function(){
+                        if (request.readyState < 4) {
+                            statusMassege.innerHTML = massege.loading;
+                        } else if (request.readyState === 4 && request.status == 200) {
+                            statusMassege.innerHTML = massege.success;
+                        } else {
+                            statusMassege.innerHTML = massege.failure;
+                        }
+                    });
+                        for (let i = 0; i < input.length; i++){
+                            input[i].value = '';
+                        }
+            });
+        }
 });
