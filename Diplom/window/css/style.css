@@ -421,6 +421,12 @@ textarea:focus {
 .container .tab-contenet .hide {
   display: none;
 }
+.container .tabs-contenet .shows {
+  display: flex;
+}
+.container .tab-scontenet .hides {
+  display: none;
+}
 /*test*/
 /*.tabs li {
 	display: inline-block;
