@@ -811,11 +811,11 @@ textarea:focus {
   width: 40rem;
   padding: 1rem 5rem 4rem;
   background-color: #ffffff;
-  /*	label {
+  	label {
 			margin-bottom: 1rem;
 			font-size: 1.5rem;
 			.regular();
-		}*/
+		}
 }
 .popup_calc_profile_content h2 {
   margin-bottom: 3rem;

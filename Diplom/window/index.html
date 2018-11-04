@@ -880,7 +880,7 @@
    <div class="popup_calc_profile">
         <div class="popup_dialog">
             <div class="popup_calc_profile_content text-center">
-                <button type="button" class="popup_calc_profile_close"><strong>&times;</strong></button>
+                <button type="button" class="popup_calc_profile_close popup_calc_close"><strong>&times;</strong></button>
                  <h2>Калькулятор</h2>
                  <h3>Выберите тип остекления <br>и его профиль</h3>
                  <select class="form-control" name="view" id="view_type">
@@ -908,15 +908,15 @@
         </div>
     </div> 
 
-    <div class="popup_calc_end">
+    <div class="popup_calc_end ">
         <div class="popup_dialog">
             <div class="popup_content text-center">
-                <button type="button" class="popup_calc_end_close"><strong>&times;</strong></button>
+                <button type="button" class="popup_calc_end_close popup_calc_close"><strong>&times;</strong></button>
                 <div class="popup_form">
-                    <form class="form-calc-finish" action="#">
+                    <form class="form form-calc-finish" action="#">
                       <h2>Спасибо за обращение! <br>Оставьте свои данные</h2>
                         <input class="form-control form_input" id="calc_user_name" name="user_name" required type="text" placeholder="Введите ваше имя">
-                        <input class="form-control form_input" id="calc_phone" name="user_phone" required type="text" placeholder="Введите телефон">
+                        <input class="form-control form_input" id="calc_phone" name="user_phone" required type="text" placeholder="Введите телефон" onkeyup="this.value = this.value.replace (/[^0-9]/, '')">
                         <button class="text-uppercase btn-block button" name="submit" type="submit">Рассчитать стоимость</button>
                         <p class="form_notice">Перезвоним в течение 10 минут</p>
                     </form>
