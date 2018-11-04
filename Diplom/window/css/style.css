@@ -428,7 +428,31 @@ textarea:focus {
   display: none;
 }
 
-
+big_photo {
+  display: none;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+.big_photo_img {
+  display: none;
+  text-align: center;
+  position: fixed;
+  padding: 20px 0 20px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /*test*/
 /*.tabs li {
 	display: inline-block;
@@ -811,11 +835,11 @@ textarea:focus {
   width: 40rem;
   padding: 1rem 5rem 4rem;
   background-color: #ffffff;
-  	label {
+  /*	label {
 			margin-bottom: 1rem;
 			font-size: 1.5rem;
 			.regular();
-		}
+		}*/
 }
 .popup_calc_profile_content h2 {
   margin-bottom: 3rem;
