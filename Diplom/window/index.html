@@ -832,7 +832,7 @@
             <div class="popup_content text-center">
                 <button type="button" class="popup_close"><strong>&times;</strong></button>
                 <div class="popup_form">
-                    <form class="form form-main-push" action="#">
+                    <form class="form" action="#">
                       <h2>Запишитесь сегодня на <br><span>бесплатный замер</span></h2>
                       <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите ваше имя">
                       <input class="form-control form_input" name="user_phone" required type="text" placeholder="Введите телефон" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')">
@@ -867,10 +867,10 @@
                   <img src="img/modal_calc/balkon/type3.png" alt="" id="type3">
                   <img src="img/modal_calc/balkon/type4.png" alt="" id="type4">
                 </div>
-                <input class="form-control" id="width" type="text" placeholder="Ширина" required>
+                <input class="form-control" id="width" type="text" placeholder="Ширина" required onkeyup="this.value = this.value.replace (/[^0-9]/, '')">
                 <label for="width">мм</label>
                 <div class="multiplication"><strong>&times;</strong></div>
-                <input class="form-control" id="height" type="text" placeholder="Высота" required>
+                <input class="form-control" id="height" type="text" placeholder="Высота" required onkeyup="this.value = this.value.replace (/[^0-9]/, '')">
                 <label for="height">мм</label>
                 <button class="button popup_calc_button">Далее</button>
             </div>
@@ -892,13 +892,13 @@
                  </select>
                  <img src="img/modal_calc/icon_cold.png" alt="">
                  <label>
-                     <input class="checkbox" type="checkbox" name="checkbox-test">
+                     <input class="checkbox cold-box" type="checkbox" name="checkbox-test">
                      <span class="checkbox-custom" id="cold"></span>
                      <span class="label">Холодное</span>
                  </label>
                  <img src="img/modal_calc/icon_warm.png" alt="">
                  <label>
-                     <input class="checkbox" type="checkbox" name="checkbox-test">
+                     <input class="checkbox warm-box" type="checkbox" name="checkbox-test">
                      <span class="checkbox-custom" id="warm"></span>
                      <span class="label">Теплое</span>
                  </label>
@@ -913,10 +913,10 @@
             <div class="popup_content text-center">
                 <button type="button" class="popup_calc_end_close"><strong>&times;</strong></button>
                 <div class="popup_form">
-                    <form class="form" action="#">
+                    <form class="form-calc-finish" action="#">
                       <h2>Спасибо за обращение! <br>Оставьте свои данные</h2>
-                        <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите ваше имя">
-                        <input class="form-control form_input" name="user_phone" required type="text" placeholder="Введите телефон">
+                        <input class="form-control form_input" id="calc_user_name" name="user_name" required type="text" placeholder="Введите ваше имя">
+                        <input class="form-control form_input" id="calc_phone" name="user_phone" required type="text" placeholder="Введите телефон">
                         <button class="text-uppercase btn-block button" name="submit" type="submit">Рассчитать стоимость</button>
                         <p class="form_notice">Перезвоним в течение 10 минут</p>
                     </form>

@@ -116,7 +116,7 @@ setClock('timer', deadLine);
                 tabLinc[i].classList.remove('active');
             }
         }
-        hideTabsContent(1)
+        hideTabsContent(1);
 
         function showTabsContent(b) {
             if (tabContent[b].classList.contains('hide')) {
@@ -194,22 +194,22 @@ setClock('timer', deadLine);
           loading: "Отправка.....",
           success: "Отправлено!",
           failure: "Ошибка"
-      }
-    let form = document.querySelectorAll('.form'),
+      };
+    let formDom = document.querySelectorAll('.form'),
         statusMassege = document.createElement('div');
         
         statusMassege.classList.add('status');
-      for (let i = 0; i < form.length; i++) {
-          let input = form[i].getElementsByTagName('input');
-            form[i].addEventListener('submit', function(event) {
+      for (let i = 0; i < formDom.length; i++) {
+          let input = formDom[i].getElementsByTagName('input');
+            formDom[i].addEventListener('submit', function(event) {
                 event.preventDefault();
-                form[i].appendChild(statusMassege);
+                formDom[i].appendChild(statusMassege);
 
                 let request = new XMLHttpRequest();
                     request.open('GET', 'server.php');
                     request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
 
-                    let formData = new FormData(form); 
+                    let formData = new FormData(formDom); 
                     request.send(formData);
                     request.addEventListener('readystatechange', function(){
                         if (request.readyState < 4) {
@@ -225,4 +225,7 @@ setClock('timer', deadLine);
                         }
             });
         }
+
+      
+
 });
