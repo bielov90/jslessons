@@ -6,7 +6,7 @@ function modalForms() {
         success: "Отправлено!",
         failure: "Ошибка"
     };
-  let formDom = document.querySelectorAll('.form'),
+  let formDom = document.querySelectorAll('.form-input-dom'),
       statusMassege = document.createElement('div');
       
       statusMassege.classList.add('status');
