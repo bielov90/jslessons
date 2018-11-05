@@ -326,6 +326,9 @@ textarea:focus {
 .glazing_block a:hover {
   cursor: pointer;
 }
+.balcon_iconsAnimate {
+  transform:scale(1.13) !important;
+}
 .glazing_cold {
   margin-top: 4rem;
   padding: 2.5rem 0;
