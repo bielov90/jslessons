@@ -4,8 +4,15 @@ window.addEventListener('DOMContentLoaded', function(){
     //Modal popup_engineer
     let popupEngineerBtn = document.querySelector('.popup_engineer_btn'),
         popupEngineer = document.querySelector('.popup_engineer'),
-        close1 = document.getElementsByClassName('popup_close')[1];
-    
+        close1 = document.getElementsByClassName('popup_close')[1],
+        inputNumber = document.querySelectorAll(".input-number");
+
+        for(let i = 0; i < inputNumber.length; i++) {
+            inputNumber[i].addEventListener("input", function() {
+            this.value = `${this.value.replace(/\D/g, "")}`;
+          });
+        }
+        
     
         popupEngineerBtn.addEventListener('click', function(){
         popupEngineer.style.display = 'block';
@@ -205,12 +212,11 @@ setClock('timer', deadLine);
                 event.preventDefault();
                 formDom[i].appendChild(statusMassege);
 
-                let request = new XMLHttpRequest();
-                    request.open('GET', 'server.php');
-                    request.setRequestHeader ('Content-Type', 'application/x-www-form-urlencoded');
+                let formData = new FormData(formDom[i]); 
 
-                    let formData = new FormData(formDom); 
-                    request.send(formData);
+                let request = new XMLHttpRequest();
+                    request.open('POST', 'server.php');
+                    request.setRequestHeader ("Content-Type", "application/json; charset=utf-8");
                     request.addEventListener('readystatechange', function(){
                         if (request.readyState < 4) {
                             statusMassege.innerHTML = massege.loading;
@@ -220,9 +226,18 @@ setClock('timer', deadLine);
                             statusMassege.innerHTML = massege.failure;
                         }
                     });
+
+                    let objc = {};
+                    formData.forEach(function(value, key){
+                        objc[key] = value;
+                    });
+                    let jsons = JSON.stringify(objc);
+                    request.send(jsons);
+
                         for (let i = 0; i < input.length; i++){
                             input[i].value = '';
                         }
+                        
             });
         }
   // calc
