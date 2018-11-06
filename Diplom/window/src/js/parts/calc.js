@@ -37,22 +37,23 @@ function calc(){
             });
         });
     });
-
-    balconIcons.forEach(function(icon, index) {
-        icon.addEventListener("click", function(event) {
-            event.preventDefault();
-            balconIcons.forEach(function(icon) {
-                icon.style.width = "20%";
-                icon.classList.remove("choosen");
+  
+            balconIcons.forEach(function(icon, index) {
+                icon.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    balconIcons.forEach(function(icon) {
+                        icon.style.width = "20%";
+                        icon.classList.remove("choosen");
+                    });
+                    balconBig.forEach(function(img) {
+                        img.style.display = "none";
+                    });
+                    this.style.width = "30%";
+                    this.classList.add("choosen");
+                    balconBig[index].style.display = "inline-block";
+                });
             });
-            balconBig.forEach(function(img) {
-                img.style.display = "none";
-            });
-            this.style.width = "30%";
-            this.classList.add("choosen");
-            balconBig[index].style.display = "inline-block";
-        });
-    });
+  
 
     popupCalcButton.addEventListener("click", function() {
         let width = document.querySelector("#width").value,
@@ -62,9 +63,9 @@ function calc(){
         if (width == "" || height == "" || type == null) {
             alert("Выбирите форму балкона, высоту и ширину");
         } else {
-            formDatas.append("Форма: ", type.alt);
-            formDatas.append("Ширина: ", width);
-            formDatas.append("Высота: ", height);
+            formDatas.append("form_type: ", type.alt);
+            formDatas.append("width_type: ", width);
+            formDatas.append("height_type: ", height);
             popupCalc.style.display = "none";
             popupCalcProfile.style.display = "block";
         }
@@ -85,11 +86,11 @@ popupCalcProfileButton.addEventListener("click", function() {
           alert("Выберите тип профиля.");
       } else {
       if (coldBox.checked) {
-          formDatas.append("Профиль: ", "cold");
+          formDatas.append("profile_type: ", "cold");
       } else {
-          formDatas.append("Профиль: ", "warm");
+          formDatas.append("profile_type: ", "warm");
       }
-      formDatas.append("Остекление: ", viewType);
+      formDatas.append("view_type: ", viewType);
       popupCalcProfile.style.display = "none";
       popupCalcEnd.style.display = "block";
   }
@@ -110,8 +111,8 @@ formCalcFinish.addEventListener("submit", function(event) {
   let name = document.querySelector("#calc_user_name").value,
   phone = document.querySelector("#calc_phone-number").value;
 
-formDatas.append("Имя: ", name);
-formDatas.append("Телефон: ", phone);
+formDatas.append("Name: ", name);
+formDatas.append("Phone: ", phone);
 
   formCalcFinish.appendChild(statusMessage);
 
