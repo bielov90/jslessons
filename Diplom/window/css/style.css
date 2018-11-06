@@ -490,7 +490,7 @@ big_photo {
   border: none;
   text-decoration: none;
   color: #0089cd;
-  /*border-top: 1rem solid @blue;
+ /* border-top: 1rem solid @blue;
 				height: 8rem;
 				padding: 2rem 1rem;
 				background: -webkit-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
@@ -498,6 +498,11 @@ big_photo {
 				background: -o-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 				background: -ms-linear-gradient(-90deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);
 				background: linear-gradient(180deg, #ebebeb 0%, #ebebeb 0%, rgba(255, 255, 255, 0) 100%);*/
+}
+.click_div {
+  border: none !important;
+  text-decoration: none !important;
+  color: #0089cd !important;
 }
 .decoration_item .no_click {
   /*border: 1px solid red;*/
@@ -507,6 +512,7 @@ big_photo {
 }
 .decoration_item .after_click {
   border-top: 1rem solid #0089cd;
+  color: #0089cd;
   height: 8rem;
   padding: 2rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), color-stop(0%, #ebebeb), to(rgba(255, 255, 255, 0)));

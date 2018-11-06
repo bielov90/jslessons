@@ -1,49 +1,39 @@
 function tabsDecoration() {
 
-    let clickLink = document.querySelectorAll('.click_link'),
-    decorSlider = document.querySelector('.decoration_slider'),
-    tabsContent = document.querySelectorAll('.tabs-contenet'),
-    noСlick = document.getElementsByClassName('no_click');
+    let tab = document.querySelectorAll(".decoration-div"),
+        decorDiv = document.querySelectorAll(".decor-div"),
+        decorLink = document.querySelectorAll(".decoration-link"),
+        tabContent = document.querySelectorAll(".tabs-contenet");
 
-
-function hideContent(a) {
-  for (let i = a; i < tabsContent.length; i++) {
-        tabsContent[i].classList.remove('show');
-        tabsContent[i].classList.add('hide');
-        noСlick[i].classList.remove('after_click');
-  }
-}
-
-hideContent(1);
-
-function showContent(b) {
-  if (tabsContent[b].classList.contains('hide')) {
-    tabsContent[b].classList.remove('hide');
-    tabsContent[b].classList.add('show');
-    noСlick[b].classList.add('after_click');
-  }
-}
-
-decorSlider.addEventListener('click', function(event){
-  let target = event.target;
-  if(target && target.classList.contains('click_link')) {
-      for(let i = 0; i < clickLink.length; i++) {
-          if(target == clickLink[i]) {
-              hideContent(0);
-              showContent(i);
-              break;
-          }
-      }
-  }
-  if(target && target.classList.contains('no_click')) {
-    for(let i = 0; i < noСlick.length; i++) {
-        if(target == noСlick[i]) {
-            hideContent(0);
-            showContent(i);
-            break;
+    function hideTabContent(a) {
+        for (let i = a; i < tabContent.length; i++) {
+            decorDiv[i].classList.remove("after_click");
+            decorDiv[i].classList.add("no_click");
+            decorLink[i].classList.remove("click_div");
+            tabContent[i].classList.remove("show");
+            tabContent[i].classList.add("hide");
         }
     }
-}
-});
+  hideTabContent(1);
+
+    function showTabContent(b) {
+        decorDiv[b].classList.remove("no_click");
+        decorDiv[b].classList.add("after_click");
+        decorLink[b].classList.add("click_div");
+        tabContent[b].classList.add("show");
+        tabContent[b].classList.remove("hide");
+    }
+
+  tab.forEach(function(link, index) {
+    link.addEventListener("click", function(event) {
+      for (let i = 0; i < tab.length; i++) {
+        if (event.target == decorDiv[i] || event.target == decorLink[i]) {
+          hideTabContent(0);
+          showTabContent(index);
+          break;
+        }
+      }
+    });
+  });
 }
 export default tabsDecoration;
