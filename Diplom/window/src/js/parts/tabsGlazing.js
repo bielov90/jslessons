@@ -3,6 +3,7 @@ function tabsGlazing() {
     let tabLinc = document.querySelectorAll('.tab-link'),
         info = document.querySelector('.glazing_slider'),
         tabFoto = document.querySelectorAll('.tab-foto'),
+        glazingBlock = document.querySelectorAll('.glazing_block'),
         tabContent = document.querySelectorAll('.tab-contenet');
         
         function hideTabsContent(a) {
@@ -37,6 +38,15 @@ function tabsGlazing() {
             if(target && target.classList.contains('tab-foto')) {
                 for (let i = 0; i < tabFoto.length; i++) {
                     if (target == tabFoto[i]) {
+                        hideTabsContent(0);
+                        showTabsContent(i);
+                        break;
+                    }
+                }
+            }
+            if(target && target.classList.contains('glazing_block')) {
+                for (let i = 0; i < glazingBlock.length; i++) {
+                    if (target == glazingBlock[i]) {
                         hideTabsContent(0);
                         showTabsContent(i);
                         break;

@@ -35,6 +35,15 @@ decorSlider.addEventListener('click', function(event){
           }
       }
   }
+  if(target && target.classList.contains('no_click')) {
+    for(let i = 0; i < noСlick.length; i++) {
+        if(target == noСlick[i]) {
+            hideContent(0);
+            showContent(i);
+            break;
+        }
+    }
+}
 });
 }
 export default tabsDecoration;
